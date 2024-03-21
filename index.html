@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orakelet Terje</title>
+</head>
+<body>
+
+    <div id="app"></div>
+
+<script>
+
+    let app = document.getElementById('app');
+    
+    let answers = ['Jeg tror ikke det altså', 'Er du dum, selvagt ikke..', 'Jaja, helt sikkert', 'Absolutt']
+
+    updateView();
+
+    function updateView(){
+    app.innerHTML = /*html*/ `
+    <input onchange="writeQuestion()">
+    <div id="answerBox">Terje svarer:</div>
+    `;
+    }
+
+    function writeQuestion(){
+        let randomAnswer = answers[Math.floor(Math.random()*answers.length)];
+        let answerBox = document.getElementById('answerBox');
+        for(let i=0; i < answers.length; i++){
+        answerBox.innerHTML = 'Terje svarer: ' + randomAnswer;
+        }
+        
+    }
+
+
+</script>
+</body>
+</html>
